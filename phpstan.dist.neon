@@ -1,3 +1,6 @@
+includes:
+	- vendor/ekino/phpstan-banned-code/extension.neon
+
 parameters:
     level: 9
     paths:

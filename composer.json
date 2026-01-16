@@ -25,6 +25,7 @@
         "webmozart/assert": "^2.1"
     },
     "require-dev": {
+        "ekino/phpstan-banned-code": "^3.0",
         "friendsofphp/php-cs-fixer": "^3.92",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^11.5.47",

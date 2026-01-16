@@ -47,12 +47,8 @@ final readonly class GutendexBookRepository implements BookRepositoryInterface
 
         /** @var GutendexSearchResponse $data */
         $data = $response->toArray();
-        dump($data);
 
-        $result = array_map($this->mapToDomain(...), $data['results']);
-        dump($result);
-
-        return $result;
+        return array_map($this->mapToDomain(...), $data['results']);
     }
 
     public function findById(BookId $id): ?Book
