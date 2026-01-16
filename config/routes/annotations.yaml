@@ -1,0 +1,3 @@
+controllers:
+    resource: ../../src/Books/Infrastructure/Controller/*
+    type: attribute

@@ -1,0 +1,12 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\Shared\Domain\ValueObject;
+
+abstract readonly class IntValueObject
+{
+    public function __construct(public(set) int $value)
+    {
+    }
+}
