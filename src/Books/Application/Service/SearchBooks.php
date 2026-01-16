@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace App\Books\Application\Service;
 
 use App\Books\Application\Dto\BookDto;
-use App\Books\Application\Mapper\BookToBookDtoMapper;
+use App\Books\Application\Mapper\BookToBookDtoMapperInterface;
 use App\Books\Domain\Repository\BookRepositoryInterface;
 
 final readonly class SearchBooks
 {
     public function __construct(
         private BookRepositoryInterface $repository,
-        private BookToBookDtoMapper $mapper,
+        private BookToBookDtoMapperInterface $mapper,
     ) {
     }
 
