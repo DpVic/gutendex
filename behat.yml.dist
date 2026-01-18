@@ -5,4 +5,9 @@ default:
                 - App\Tests\Behat\BookContext
 
     extensions:
-        FriendsOfBehat\SymfonyExtension: null
+        FriendsOfBehat\SymfonyExtension:
+            bootstrap: tests/bootstrap.php
+            kernel:
+                environment: test
+                debug: false
+                class: App\Kernel

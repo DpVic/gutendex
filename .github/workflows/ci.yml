@@ -40,10 +40,10 @@ jobs:
           echo "REDIS_URL=redis://localhost:6379" >> .env.test
 
       - name: Run PHPUnit tests
-        run: env APP_ENV=test vendor/bin/phpunit
+        run: env APP_ENV=test REDIS_URL=redis://localhost:6379 vendor/bin/phpunit
 
       - name: Run Behat tests
-        run: env APP_ENV=test vendor/bin/behat
+        run: env APP_ENV=test REDIS_URL=redis://localhost:6379 vendor/bin/behat
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --memory-limit=1G
