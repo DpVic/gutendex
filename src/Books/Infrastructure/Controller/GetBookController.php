@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Books\Infrastructure\Controller;
 
+use App\Books\Application\Dto\BookDto;
 use App\Books\Application\Service\GetBook;
-use App\Books\Domain\Entity\Book;
 use App\Books\Domain\Exception\BookNotFoundException;
 use App\Books\Domain\ValueObject\Book\BookId;
 use Nelmio\ApiDocBundle\Attribute\Model;
@@ -25,7 +25,7 @@ final class GetBookController extends AbstractController
     #[OA\Response(
         response: 200,
         description: 'Returns the book details',
-        content: new OA\JsonContent(ref: new Model(type: Book::class))
+        content: new OA\JsonContent(ref: new Model(type: BookDto::class))
     )]
     #[OA\Response(
         response: 404,

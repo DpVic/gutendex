@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Books\Infrastructure\Controller;
 
+use App\Books\Application\Dto\BookDto;
 use App\Books\Application\Service\SearchBooks;
-use App\Books\Domain\Entity\Book;
 use Nelmio\ApiDocBundle\Attribute\Model;
 use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,7 +27,7 @@ final class SearchBooksController extends AbstractController
         content: new OA\JsonContent(
             type: 'array',
             items: new OA\Items(
-                ref: new Model(type: Book::class)
+                ref: new Model(type: BookDto::class)
             )
         )
     )]
