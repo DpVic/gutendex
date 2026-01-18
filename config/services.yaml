@@ -22,6 +22,12 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+            - '../src/Books/Infrastructure/Repository/CachedBookRepository.php'
+
+    App\Books\Infrastructure\Repository\CachedBookRepository:
+        decorates: App\Books\Infrastructure\Repository\GutendexBookRepository
+        arguments:
+            $bookCache: '@book.cache'
 
 
     # add more service definitions when explicit configuration is needed

@@ -10,7 +10,7 @@ use App\Books\Domain\Entity\Book;
 use App\Books\Domain\ValueObject\Author\Author;
 use App\Books\Domain\ValueObject\Book\Subject;
 
-final readonly class BookToBookDtoMapper
+final readonly class BookToBookDtoMapper implements BookToBookDtoMapperInterface
 {
     public function map(Book $book): BookDto
     {

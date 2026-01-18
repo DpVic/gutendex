@@ -1,0 +1,9 @@
+# yaml-language-server: $schema=../../../vendor/symfony/dependency-injection/Loader/schema/services.schema.json
+framework:
+    test: true
+    http_client:
+        mock_response_factory: App\Tests\Shared\Infrastructure\HttpClient\MockResponseFactory
+    cache:
+        pools:
+            book.cache:
+                adapter: cache.adapter.array

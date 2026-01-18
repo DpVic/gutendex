@@ -26,6 +26,12 @@ services:
     networks:
       - symfony-network
 
+  redis:
+    image: redis:alpine
+    command: redis-server --maxmemory 100mb --maxmemory-policy allkeys-lru
+    networks:
+      - symfony-network
+
 networks:
   symfony-network:
     driver: bridge

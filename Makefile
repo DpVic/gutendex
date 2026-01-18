@@ -22,7 +22,7 @@ shell:
 	$(DOCKER_COMPOSE) exec $(PHP_CONT) bash
 
 test:
-	$(DOCKER_COMPOSE) exec -T $(PHP_CONT) bin/phpunit;
+	$(DOCKER_COMPOSE) exec -T $(PHP_CONT) env APP_ENV=test bin/phpunit;
 
 pre-push:
 	sh scripts/pre-push
