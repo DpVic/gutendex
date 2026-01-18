@@ -25,7 +25,9 @@
         "webmozart/assert": "^2.1"
     },
     "require-dev": {
+        "behat/behat": "^3.29",
         "ekino/phpstan-banned-code": "^3.0",
+        "friends-of-behat/symfony-extension": "^2.6",
         "friendsofphp/php-cs-fixer": "^3.92",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^11.5.47",

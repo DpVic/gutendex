@@ -1,7 +1,7 @@
 DOCKER_COMPOSE = docker compose
 PHP_CONT = php
 
-.PHONY: up down build install test phpstan rector-lint rector-fix cs-lint cs-fix pre-push shell cache-clear
+.PHONY: up down build install test behat phpstan rector-lint rector-fix cs-lint cs-fix pre-push shell cache-clear
 
 up:
 	$(DOCKER_COMPOSE) up -d
@@ -23,6 +23,9 @@ shell:
 
 test:
 	$(DOCKER_COMPOSE) exec -T $(PHP_CONT) env APP_ENV=test bin/phpunit;
+
+behat:
+	$(DOCKER_COMPOSE) exec -T $(PHP_CONT) env APP_ENV=test vendor/bin/behat;
 
 pre-push:
 	sh scripts/pre-push

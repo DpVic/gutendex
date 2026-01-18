@@ -9,21 +9,28 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "2. Running static analysis with PHPStan..."
+echo "2. Running Behat tests..."
+make behat
+if [ $? -ne 0 ]; then
+    echo "Behat tests failed. Aborting push."
+    exit 1
+fi
+
+echo "3. Running static analysis with PHPStan..."
 make phpstan
 if [ $? -ne 0 ]; then
     echo "PHPStan failed. Aborting push."
     exit 1
 fi
 
-echo "3. Running Rector checks..."
+echo "4. Running Rector checks..."
 make rector-lint
 if [ $? -ne 0 ]; then
     echo "Rector failed. Aborting push."
     exit 1
 fi
 
-echo "4. Running code style checks with PHP CS Fixer..."
+echo "5. Running code style checks with PHP CS Fixer..."
 make cs-lint
 if [ $? -ne 0 ]; then
     echo "PHP CS Fixer failed. Aborting push."
